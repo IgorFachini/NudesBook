@@ -26,20 +26,3 @@ firebase.database().ref('users').on('value', function (snapshot) {
         usersList.appendChild(li);
     });
 });
-
-// var storage = firebase.storage();
-// var storageRef = storage.ref();
-// var tangRef = storageRef.child('arquivos/Wikedbotz.jpg');
-//
-// // First we sign in the user anonymously
-// firebase.auth().signInAnonymously().then(function() {
-//   // Once the sign in completed, we get the download URL of the image
-//   tangRef.getDownloadURL().then(function(url)                             {
-//     // Once we have the download URL, we set it to our img element
-//     document.querySelector('img').src = url;
-//
-//   }).catch(function(error) {
-//     // If anything goes wrong while getting the download URL, log the error
-//     console.error(error);
-//   });
-// });

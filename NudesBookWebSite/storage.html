@@ -1,23 +1,46 @@
 <html>
 
 <head>
-    <title>1965 - Introdução ao Firebase</title>
-    <link rel="import" href="partials/head.html">
+  <title>Mandar Nudes</title>
+  <!-- CORE CSS LYBRARIES... -->
+  <link rel="import" href="partials/head.html">
 </head>
 
 <body>
-    <h1>Mandar nudes</h1>
+  <h1>Mandar nudes</h1>
 
-    <progress value="0" max="100" id="uploader"></progress>
-    <br>
-    <input type="file" value="Upload" id="fileButton">
+  <div class="form-group">
+    <label for="nameInput">Nome</label>
+    <input type="text" class="form-control" id="nameInput" placeholder="Nome">
+  </div>
 
-    <br><br>
-    <a class="button button-clear" href="index.html">Voltar para Home</a>
-    <!-- CORE JAVASCRIPT LYBRARIES... -->
-    <link rel="import" href="partials/footer.html">
-    <!-- OTHER JAVASCRIPT LYBRARIES... -->
-    <script src="js/storage.js"></script>
+  <progress value="0" max="100" id="uploader"></progress>
+  <br>
+  <input type="file" value="Upload" id="fileButton">
+
+  <br><br>
+  <h1></h1>
+  <a class="button button-clear" href="index.html">Voltar para Home</a>
+
+<h2>Lightbox image gallery</h2>
+<!-- The container for the list of example images -->
+<div id="links" class="links"></div>
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+
+  <!-- CORE JAVASCRIPT LYBRARIES... -->
+  <link rel="import" href="partials/footer.html">
+  <!-- OTHER JAVASCRIPT LYBRARIES... -->
+  <script src="js/storage.js"></script>
 </body>
 
 </html>
