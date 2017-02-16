@@ -22,11 +22,11 @@
   <h1></h1>
   <a class="button button-clear" href="index.html">Voltar para Home</a>
 
-<h2>Lightbox image gallery</h2>
-<!-- The container for the list of example images -->
-<div id="links" class="links"></div>
-<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery">
+  <h2>Lightbox image gallery</h2>
+  <!-- The container for the list of example images -->
+  <div id="links" class="links"></div>
+  <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+  <div id="blueimp-gallery" class="blueimp-gallery">
     <div class="slides"></div>
     <h3 class="title"></h3>
     <a class="prev">‹</a>
@@ -34,13 +34,32 @@
     <a class="close">×</a>
     <a class="play-pause"></a>
     <ol class="indicator"></ol>
-</div>
+  </div>
 
-
+  <h1>Real time chat</h1>
+  <div id="firechat-wrapper"></div>
   <!-- CORE JAVASCRIPT LYBRARIES... -->
   <link rel="import" href="partials/footer.html">
   <!-- OTHER JAVASCRIPT LYBRARIES... -->
   <script src="js/storage.js"></script>
+  <script type="text/javascript">
+    var chatRef = firebase.database().ref();
+    // Create an instance of Firechat
+    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+    // Listen for authentication state changes
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // If the user is logged in, set them as the Firechat user
+        chat.setUser(user.uid, "Anonymous" + user.uid.substr(10, 8));
+      } else {
+        // If the user is not logged in, sign them in anonymously
+        firebase.auth().signInAnonymously().catch(function(error) {
+          console.log("Error signing user in anonymously:", error);
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>
